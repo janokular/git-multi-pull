@@ -14,14 +14,15 @@ fi
 # Pull changes for every repository from the REPO_FILE
 for REPO in $(cat "${REPO_FILE}")
 do
-  echo "Pulling changes for ${REPO}"
+  BASE_REPO=$(basename ${REPO})
+  echo "Pulling changes for ${BASE_REPO}"
   git -C "${REPO}" pull
   
   # Check the status of the git pull command
   if [[ "${?}" -ne 0 ]]
   then
-    echo -e "Failed at pulling changes for ${REPO}\n"
+    echo -e "Failed at pulling changes for ${BASE_REPO}\n"
   else
-    echo -e "Successfully pulled changes for ${REPO}\n"
+    echo -e "Successfully pulled changes for ${BASE_REPO}\n"
   fi
 done
