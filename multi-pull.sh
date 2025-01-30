@@ -4,6 +4,11 @@
 
 REPO_FILE='./repos'
 
+# Colors for messages
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 # Check if REPO_FILE exists and is a file
 if [[ ! -e "${REPO_FILE}" ]]
 then
@@ -21,8 +26,8 @@ do
   # Check the status of the git pull command
   if [[ "${?}" -ne 0 ]]
   then
-    echo -e "Failed at pulling changes for ${BASE_REPO}\n"
+    echo -e "${RED}Failed at pulling changes for ${BASE_REPO}${NC}\n"
   else
-    echo -e "Successfully pulled changes for ${BASE_REPO}\n"
+    echo -e "${GREEN}Successfully pulled changes for ${BASE_REPO}${NC}\n"
   fi
 done
