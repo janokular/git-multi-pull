@@ -9,6 +9,23 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+usage() {
+  echo "Pulls changes to all listed repositories"
+  echo -e "[-f FILE]\tUse FILE for the list of repositories: default ${REPO_FILE}"
+  echo -e "[-v]\t\tVerbose mode: display additional messages"
+  exit 1
+}
+
+# Check options provided by the user
+while getopts f:v OPTION
+do
+  case ${OPTION} in
+    f) REPO_FILE=${OPTARG} ;;
+    v) VERBOSE_MODE='true' ;;
+    ?) usage ;;
+  esac
+done
+
 # Check if REPO_FILE exists and is a file
 if [[ ! -e "${REPO_FILE}" ]]
 then
@@ -20,8 +37,15 @@ fi
 for REPO in $(cat "${REPO_FILE}")
 do
   BASE_REPO=$(basename ${REPO})
-  echo "Pulling changes for ${BASE_REPO}"
-  git -C "${REPO}" pull
+  
+  # Check if user wants to get messages from git pull command
+  if [[ ${VERBOSE_MODE} = 'true' ]]
+  then
+    echo "Trying to pull changes for ${BASE_REPO}"
+    git -C "${REPO}" pull
+  else
+    git -C "${REPO}" pull &> /dev/null
+  fi
   
   # Check the status of the git pull command
   if [[ "${?}" -ne 0 ]]
