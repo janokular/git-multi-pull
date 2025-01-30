@@ -38,7 +38,7 @@ for REPO in $(cat "${REPO_FILE}")
 do
   BASE_REPO=$(basename ${REPO})
   
-  # Check if user wants to get messages from git pull command
+  # Check if user wants to get additional messages
   if [[ ${VERBOSE_MODE} = 'true' ]]
   then
     echo "Trying to pull changes for ${BASE_REPO}"
