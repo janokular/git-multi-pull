@@ -14,7 +14,6 @@ fi
 # Pull changes for every repository from the REPO_FILE
 for REPO in $(cat "${REPO_FILE}")
 do
-  REPO=$(realpath ${REPO})	
   echo "Pulling changes for ${REPO}"
   git -C "${REPO}" pull
   
