@@ -27,9 +27,16 @@ do
 done
 
 # Check if REPO_FILE exists and is a file
-if [[ ! -e "${REPO_FILE}" ]]
+if [[ ! -f "${REPO_FILE}" ]]
 then
   echo "Cannot open ${REPO_FILE}" >&2
+  exit 1
+fi
+
+# Check if REPO_FILE is not empty
+if [[ ! -s "${REPO_FILE}" ]]
+then
+  echo "${REPO_FILE} is empty"
   exit 1
 fi
 
