@@ -10,14 +10,15 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 usage() {
-  echo "Pulls changes to all listed repositories"
-  echo -e "[-f FILE]\tUse FILE for the list of repositories: default ${REPO_FILE}"
-  echo -e "[-v]\t\tVerbose mode: display additional messages"
+  echo "Usage: ${0} [-v] [-f FILE]"
+  echo "Pull changes for all listed repositories: default ${REPO_FILE}"
+  echo -e "-f FILE\tUse FILE for the list of repositories"
+  echo -e "-v\tVerbose mode"
   exit 1
 }
 
 # Check options provided by the user
-while getopts f:v OPTION
+while getopts f:v OPTION &> /dev/null
 do
   case ${OPTION} in
     f) REPO_FILE=${OPTARG} ;;
@@ -29,14 +30,14 @@ done
 # Check if REPO_FILE exists and is a file
 if [[ ! -f "${REPO_FILE}" ]]
 then
-  echo "Cannot open ${REPO_FILE}" >&2
+  echo -e "${RED}Cannot open ${REPO_FILE}${NC}" >&2
   exit 1
 fi
 
 # Check if REPO_FILE is not empty
 if [[ ! -s "${REPO_FILE}" ]]
 then
-  echo "${REPO_FILE} is empty"
+  echo -e "${RED}Provided file ${REPO_FILE} is empty${NC}" >&2
   exit 1
 fi
 
@@ -62,3 +63,5 @@ do
     echo -e "${GREEN}Successfully pulled changes for ${BASE_REPO}${NC}\n"
   fi
 done
+
+exit 0
