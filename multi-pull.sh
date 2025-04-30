@@ -4,11 +4,6 @@
 
 REPO_FILE='./repos'
 
-# Colors for messages
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m'
-
 usage() {
   echo "Usage: ${0} [-v] [-f FILE]"
   echo "Pull changes for all listed repositories: default ${REPO_FILE}"
@@ -30,14 +25,14 @@ done
 # Check if REPO_FILE exists and is a file
 if [[ ! -f "${REPO_FILE}" ]]
 then
-  echo -e "${RED}Cannot open ${REPO_FILE}${NC}" >&2
+  echo -e "Cannot open ${REPO_FILE}" >&2
   exit 1
 fi
 
 # Check if REPO_FILE is not empty
 if [[ ! -s "${REPO_FILE}" ]]
 then
-  echo -e "${RED}Provided file ${REPO_FILE} is empty${NC}" >&2
+  echo -e "Provided file ${REPO_FILE} is empty" >&2
   exit 1
 fi
 
@@ -58,9 +53,9 @@ do
   # Check the status of the git pull command
   if [[ "${?}" -ne 0 ]]
   then
-    echo -e "${RED}Failed at pulling changes for ${BASE_REPO}${NC}\n"
+    echo -e "Failed at pulling changes for ${BASE_REPO}\n"
   else
-    echo -e "${GREEN}Successfully pulled changes for ${BASE_REPO}${NC}\n"
+    echo -e "Successfully pulled changes for ${BASE_REPO}\n"
   fi
 done
 
