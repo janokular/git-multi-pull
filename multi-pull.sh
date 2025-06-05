@@ -3,6 +3,7 @@
 # This script pulls changes for every repository from a list
 
 REPO_FILE='./repos'
+REPO_PATH="${HOME}/Repositories"
 
 usage() {
   echo "Usage: ${0} [-v] [-f FILE]"
@@ -45,9 +46,9 @@ do
   if [[ ${VERBOSE_MODE} = 'true' ]]
   then
     echo "Trying to pull changes for ${BASE_REPO}"
-    git -C "${REPO}" pull
+    git -C "${REPO_PATH}/${REPO}" pull
   else
-    git -C "${REPO}" pull &> /dev/null
+    git -C "${REPO_PATH}/${REPO}" pull &> /dev/null
   fi
   
   # Check the status of the git pull command
