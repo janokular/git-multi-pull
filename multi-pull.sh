@@ -3,7 +3,7 @@
 # This script pulls changes for every repository from a list
 
 REPO_FILE='./repos'
-REPO_PATH='~/Repositories'
+REPO_PATH="${HOME}/Repositories"
 
 usage() {
   echo "Usage: ${0} [-v] [-f FILE]"
