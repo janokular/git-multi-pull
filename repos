@@ -6,6 +6,7 @@ linuxsvrs/playground/log-archive-tool
 linuxsvrs/playground/nginx-log-analyser
 linuxsvrs/playground/server-performance-stats
 linuxsvrs/playground/task-tracker
+linuxsvrs/playground/tmdb-cli
 linuxsvrs/playground/github-user-activity
 linuxsvrs/playground/cli-games
 linuxsvrs/playground/expense-tracker
