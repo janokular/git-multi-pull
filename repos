@@ -2,12 +2,11 @@ brew-multi-install
 dotfiles
 git-multi-pull
 linuxsvrs/multinet
-linuxsvrs/playground/cli-games
-linuxsvrs/playground/docker-hub-api
 linuxsvrs/playground/expense-tracker
 linuxsvrs/playground/github-user-activity
 linuxsvrs/playground/log-archive-tool
 linuxsvrs/playground/nginx-log-analyser
+linuxsvrs/playground/number-guessing-game
 linuxsvrs/playground/server-performance-stats
 linuxsvrs/playground/task-tracker
 linuxsvrs/somatochart
