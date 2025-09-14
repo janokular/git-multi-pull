@@ -5,6 +5,7 @@ linuxsvrs/caching-proxy-server
 linuxsvrs/multinet
 linuxsvrs/playground/broadcast-server
 linuxsvrs/playground/expense-tracker
+linuxsvrs/playground/find-and-replace
 linuxsvrs/playground/github-user-activity
 linuxsvrs/playground/log-archive-tool
 linuxsvrs/playground/nginx-log-analyser
