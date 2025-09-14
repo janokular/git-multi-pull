@@ -5,6 +5,10 @@
 REPO_FILE='./repos'
 REPO_PATH="${HOME}/Repositories"
 
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+RESET="\033[0m"
+
 usage() {
   echo "Usage: ${0} [-v] [-f FILE]"
   echo "Pull changes for all listed repositories: default ${REPO_FILE}"
@@ -54,9 +58,9 @@ do
   # Check the status of the git pull command
   if [[ "${?}" -ne 0 ]]
   then
-    echo -e "Failed at pulling changes for ${BASE_REPO}\n"
+    echo -e "${RED}Failed at pulling changes for ${BASE_REPO}${RESET}\n"
   else
-    echo -e "Successfully pulled changes for ${BASE_REPO}\n"
+    echo -e "${GREEN}Successfully pulled changes for ${BASE_REPO}${RESET}\n"
   fi
 done
 
