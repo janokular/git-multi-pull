@@ -1,9 +1,9 @@
 brew-multi-install
 dotfiles
 git-multi-pull
-linuxsvrs/caching-proxy-server
 linuxsvrs/multinet
 linuxsvrs/playground/broadcast-server
+linuxsvrs/playground/caching-proxy-server
 linuxsvrs/playground/expense-tracker
 linuxsvrs/playground/find-and-replace
 linuxsvrs/playground/github-user-activity
@@ -13,6 +13,8 @@ linuxsvrs/playground/number-guessing-game
 linuxsvrs/playground/server-performance-stats
 linuxsvrs/playground/task-tracker
 linuxsvrs/somatochart
+linuxsvrs/somato-chart
+linuxsvrs/eisschloss
 linuxsvrs/user-manager
 linuxsvrs/wordpress
 notes

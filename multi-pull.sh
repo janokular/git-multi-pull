@@ -2,65 +2,59 @@
 
 # This script pulls changes for every repository from a list
 
-REPO_FILE='./repos'
-REPO_PATH="${HOME}/Repositories"
+repo_file='./repos'
+repo_path="${HOME}/repositories"
 
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-RESET="\033[0m"
+red="\033[0;31m"
+green="\033[0;32m"
+reset="\033[0m"
 
 usage() {
   echo "Usage: ${0} [-v] [-f FILE]"
-  echo "Pull changes for all listed repositories: default ${REPO_FILE}"
+  echo "Pull changes for all listed repositories: default ${repo_file}"
   echo -e "-f FILE\tUse FILE for the list of repositories"
   echo -e "-v\tVerbose mode"
   exit 1
 }
 
 # Check options provided by the user
-while getopts f:v OPTION &> /dev/null
-do
-  case ${OPTION} in
-    f) REPO_FILE=${OPTARG} ;;
-    v) VERBOSE_MODE='true' ;;
+while getopts f:v option &> /dev/null; do
+  case ${option} in
+    f) repo_file=${OPTARG} ;;
+    v) verbose_mode='true' ;;
     ?) usage ;;
   esac
 done
 
-# Check if REPO_FILE exists and is a file
-if [[ ! -f "${REPO_FILE}" ]]
-then
-  echo "Cannot open ${REPO_FILE}" >&2
+# Check if repo_file exists and is a file
+if [[ ! -f "${repo_file}" ]]; then
+  echo "Cannot open ${repo_file}" >&2
   exit 1
 fi
 
-# Check if REPO_FILE is not empty
-if [[ ! -s "${REPO_FILE}" ]]
-then
-  echo "Provided file ${REPO_FILE} is empty" >&2
+# Check if repo_file is not empty
+if [[ ! -s "${repo_file}" ]]; then
+  echo "Provided file ${repo_file} is empty" >&2
   exit 1
 fi
 
-# Pull changes for every repository from the REPO_FILE
-for REPO in $(cat "${REPO_FILE}")
-do
-  BASE_REPO=$(basename ${REPO})
+# Pull changes for every repository from the repo_file
+for repo in $(cat "${repo_file}"); do
+  base_repo=$(basename ${repo})
   
   # Check if user wants to get additional messages
-  if [[ ${VERBOSE_MODE} = 'true' ]]
-  then
-    echo "Trying to pull changes for ${BASE_REPO}"
-    git -C "${REPO_PATH}/${REPO}" pull
+  if [[ ${verbose_mode} = 'true' ]]; then
+    echo "Trying to pull changes for ${base_repo}"
+    git -C "${repo_path}/${repo}" pull
   else
-    git -C "${REPO_PATH}/${REPO}" pull &> /dev/null
+    git -C "${repo_path}/${repo}" pull &> /dev/null
   fi
   
   # Check the status of the git pull command
-  if [[ "${?}" -ne 0 ]]
-  then
-    echo -e "${RED}Failed at pulling changes for ${BASE_REPO}${RESET}\n"
+  if [[ "${?}" -ne 0 ]]; then
+    echo -e "${red}Failed at pulling changes for ${base_repo}${reset}\n"
   else
-    echo -e "${GREEN}Successfully pulled changes for ${BASE_REPO}${RESET}\n"
+    echo -e "${green}Successfully pulled changes for ${base_repo}${reset}\n"
   fi
 done
 
