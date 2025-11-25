@@ -1,6 +1,7 @@
 brew-multi-install
 dotfiles
 git-multi-pull
+linuxsvrs/926
 linuxsvrs/multinet
 linuxsvrs/playground/broadcast-server
 linuxsvrs/playground/caching-proxy-server
