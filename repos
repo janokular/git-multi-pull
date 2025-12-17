@@ -2,6 +2,7 @@ brew-multi-install
 dotfiles
 git-multi-pull
 linuxsvrs/multinet
+linuxsvrs/musicstreamer
 linuxsvrs/playground/broadcast-server
 linuxsvrs/playground/caching-proxy-server
 linuxsvrs/playground/expense-tracker
@@ -14,7 +15,6 @@ linuxsvrs/playground/port-scanner
 linuxsvrs/playground/server-performance-stats
 linuxsvrs/playground/task-tracker
 linuxsvrs/somatochart
-linuxsvrs/streamer
 linuxsvrs/eisschloss
 linuxsvrs/user-manager
 linuxsvrs/wordpress
