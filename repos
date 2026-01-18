@@ -1,6 +1,7 @@
 brew-multi-install
 dotfiles
 git-multi-pull
+linuxsvrs/ansible-sandbox
 linuxsvrs/multinet
 linuxsvrs/musicstreamer
 linuxsvrs/playground/broadcast-server
