@@ -5,7 +5,6 @@ linuxsvrs/ansible-sandbox
 linuxsvrs/multinet
 linuxsvrs/musicstreamer
 linuxsvrs/playground/algorithm-visualizer
-linuxsvrs/playground/broadcast-server
 linuxsvrs/playground/caching-proxy-server
 linuxsvrs/playground/expense-tracker
 linuxsvrs/playground/find-and-replace
