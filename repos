@@ -2,10 +2,10 @@ brew-multi-install
 dotfiles
 git-multi-pull
 linuxsvrs/ansible-sandbox
+linuxsvrs/caching-proxy-server
 linuxsvrs/multinet
 linuxsvrs/musicstreamer
 linuxsvrs/playground/algorithm-visualizer
-linuxsvrs/playground/caching-proxy-server
 linuxsvrs/playground/expense-tracker
 linuxsvrs/playground/find-and-replace
 linuxsvrs/playground/github-user-activity
