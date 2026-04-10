@@ -5,8 +5,8 @@
 ./multi-pull.sh
 
 # Pull changes for repositories listed in the external file
-./multi-pull -f FILEPATH
+./multi-pull.sh -f FILEPATH
 
 # Verbose mode
-./multi-pull -v
+./multi-pull.sh -v
 ```
