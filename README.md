@@ -1,4 +1,4 @@
-## Git Multi Pull
+## Git multi pull
 ### Running the script
 ```
 # Automatically pull changes for repositories listed in repos.txt file
