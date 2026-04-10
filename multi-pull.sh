@@ -10,10 +10,10 @@ green="\033[0;32m"
 reset="\033[0m"
 
 usage() {
-  echo "Usage: ${0} [-v] [-f FILE]"
+  echo "Usage: ${0} [-v] [-f FILEPATH]"
   echo "Pull changes for all listed repositories: default ${repo_file}"
-  echo -e "-f FILE\tUse FILE for the list of repositories"
-  echo -e "-v\tVerbose mode"
+  echo -e "-f FILEPATH\tUse external file with list of repositories"
+  echo -e "-v\t\tVerbose mode"
   exit 1
 }
 
