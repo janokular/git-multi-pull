@@ -10,7 +10,6 @@ linuxsvrs/caching-proxy-server
 linuxsvrs/multinet
 linuxsvrs/musicstreamer
 linuxsvrs/somatochart
-linuxsvrs/wordpress
 notes
 server
 task-tracker
