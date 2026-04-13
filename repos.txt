@@ -10,6 +10,7 @@ github-user-activity
 multinet
 musicstreamer
 notes
+prometheus-monitoring
 server
 somatochart
 task-tracker
