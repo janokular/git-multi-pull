@@ -8,8 +8,8 @@ expense-tracker
 git-multi-pull
 github-user-activity
 homelab
+monitoring-stack
 multinet
 notes
-prometheus-monitoring
 somatochart
 task-tracker
