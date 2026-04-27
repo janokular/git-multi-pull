@@ -3,7 +3,7 @@
 # This script pulls changes for every repository from a list
 
 repo_file='./repos.txt'
-repo_path="${HOME}/repositories"
+repo_path="${HOME}/Repositories"
 
 red="\033[0;31m"
 green="\033[0;32m"
