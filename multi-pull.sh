@@ -29,7 +29,7 @@ function update_repo_file() {
   # Check if repo_file exists and if it has to be updated
   if [[ -f $repo_file ]] \
   && diff $tmp_file $repo_file &> /dev/null; then
-    echo "Already up to date."
+    echo "Already up to date"
   else
     cat $tmp_file > $repo_file
 
