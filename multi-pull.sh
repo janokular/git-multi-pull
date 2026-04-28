@@ -34,10 +34,10 @@ function update_repo_file() {
     cat $tmp_file > $repo_file
 
     # Check the update exit code
-    if [[ "${?}" -ne 0 ]] \
-    && [[ ${verbose_mode} = 'true' ]]; then
+    if [[ "${?}" -ne 0 ]]; then
       echo -e "${red}Failed at updating ${repo_file}${reset}" >&2
-    else
+      exit 1
+    elif [[ ${verbose_mode} = 'true' ]]; then
       echo -e "${green}Successfully updated ${repo_file}${reset}"
     fi
   fi
@@ -72,10 +72,10 @@ for repo in $(cat "${repo_file}"); do
   git -C "${repo_path}/${repo}" pull &> /dev/null
   
   # Check the git pull exit code
-  if [[ "${?}" -ne 0 ]] \
-  && [[ ${verbose_mode} = 'true' ]]; then
+  if [[ "${?}" -ne 0 ]]; then
     echo -e "${red}Failed at pulling changes for ${repo}${reset}" >&2
-  else
+    exit 1
+  elif [[ ${verbose_mode} = 'true' ]]; then
     echo -e "${green}Successfully pulled changes for ${repo}${reset}"
   fi
 done
