@@ -4,6 +4,9 @@
 # Automatically pull changes for repositories listed in repos.txt file
 ./multi-pull.sh
 
+# Enable colorized output
+./multi-pull.sh -c
+
 # Pull changes for repositories listed in the external file
 ./multi-pull.sh -f FILEPATH
 

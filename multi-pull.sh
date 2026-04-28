@@ -5,13 +5,10 @@
 repo_file='./repos.txt'
 repo_path="${HOME}/Repositories"
 
-red="\033[0;31m"
-green="\033[0;32m"
-reset="\033[0m"
-
 function usage() {
-  echo "usage: $(basename ${0}) [-f FILEPATH] [-h] [-u] [-v]"
+  echo "usage: $(basename ${0}) [-c] [-f FILEPATH] [-h] [-u] [-v]"
   echo -e "\nPull changes for all repositories listed inside ${repo_file}\n"
+  echo -e "-c\t\tenable colorized output"
   echo -e "-f FILEPATH\tuse external file with list of repositories"
   echo -e "-h\t\tshow this help message and exit"
   echo -e "-u\t\tupdate repository file ${repo_file} and exit"
@@ -47,8 +44,13 @@ function update_repo_file() {
 }
 
 # Check options provided by the user
-while getopts f:huv option &> /dev/null; do
+while getopts cf:huv option &> /dev/null; do
   case ${option} in
+    c)
+      red="\033[0;31m"
+      green="\033[0;32m"
+      reset="\033[0m"
+      ;;
     f) repo_file=${OPTARG} ;;
     h) usage ;;
     u) update_repo_file ;;
