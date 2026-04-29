@@ -30,6 +30,7 @@ function update_repo_file() {
   else
     cat $tmp_file > $repo_file
 
+    # TODO: fix verbose mode
     # Check the update exit code
     if [[ "${?}" -ne 0 ]]; then
       echo -e "${red}Failed at updating ${repo_file}${reset}" >&2
