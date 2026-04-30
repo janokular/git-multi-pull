@@ -1,21 +1,18 @@
 ## Git multi pull
 ### Running the script
 ```
-# Automatically pull changes for repositories listed in repos.txt file
+# Automatically pull changes for all repositories inside ./repos.txt
 ./multi-pull.sh
 
 # Enable colorized output
 ./multi-pull.sh -c
 
-# Pull changes for repositories listed in the external file
-./multi-pull.sh -f FILEPATH
-
 # Display help message
 ./multi-pull.sh -h
 
-# Update repository file repos.txt
+# Update repository file ./repos.txt
 ./multi-pull.sh -u
 
-# Verbose mode
+# Enable verbose mode
 ./multi-pull.sh -v
 ```
