@@ -10,7 +10,7 @@ function usage() {
   echo -e "\nPull changes for all repositories inside ${repos_file}\n"
   echo -e "-c\tenable colorized output"
   echo -e "-h\tshow this help message and exit"
-  echo -e "-u\tupdate repository file ${repos_file}"
+  echo -e "-u\tupdate repository file ${repos_file} and exit"
   echo -e "-v\tenable verbose mode"
   exit 1
 }
@@ -49,6 +49,7 @@ function update_repos_file() {
   fi
 
   rm "${tmp_file}"
+  exit 0
 }
 
 function pull_changes() {
@@ -85,4 +86,3 @@ if [[ "${update_repos}" = "true" ]]; then
 fi
 
 pull_changes "${repos_file}"
-exit $?
