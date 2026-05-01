@@ -65,7 +65,7 @@ function pull_changes() {
   done
 }
 
-while getopts "cf:huv" option &> /dev/null; do
+while getopts "chuv" option &> /dev/null; do
   case "${option}" in
     c)
       readonly red="\033[0;31m"
