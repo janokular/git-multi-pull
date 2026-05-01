@@ -40,7 +40,7 @@ function update_repos_file() {
   else
     cat "${tmp_file}" > "${file}"
 
-    if [[ $? -ne 0 ]]; then
+    if [[ "${?}" -ne 0 ]]; then
       echo -e "${red}Failed at updating ${file}${reset}" >&2
       exit 1
     elif [[ "${verbose}" = "true" ]]; then
@@ -56,7 +56,7 @@ function pull_changes() {
   for repo in $(cat "${repos_file}"); do
     git -C "${repo_path}/${repo}" pull &> /dev/null
 
-    if [[ $? -ne 0 ]]; then
+    if [[ "${?}" -ne 0 ]]; then
       echo -e "${red}Failed at pulling changes for ${repo}${reset}" >&2
       exit 1
     elif [[ "${verbose}" = "true" ]]; then
