@@ -2,7 +2,6 @@ algorithm-visualizer
 ansible-sandbox
 bash-scripts
 brew-multi-install
-caching-proxy-server
 dotfiles
 expense-tracker
 git-multi-pull
