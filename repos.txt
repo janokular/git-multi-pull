@@ -7,6 +7,7 @@ expense-tracker
 git-multi-pull
 github-user-activity
 homelab
+jenkins-sandbox
 monitoring-stack
 multinet
 notes
