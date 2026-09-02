@@ -1,4 +1,3 @@
-algorithm-visualizer
 ansible-sandbox
 bash-scripts
 brew-multi-install
