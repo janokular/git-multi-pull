@@ -11,5 +11,6 @@ jenkins-sandbox
 monitoring-stack
 multinet
 notes
+repeater
 somatochart
 task-tracker
