@@ -5,7 +5,6 @@ dockerfiles
 dotfiles
 expense-tracker
 git-multi-pull
-github-user-activity
 homelab
 jenkins-pipelines
 monitoring-stack
